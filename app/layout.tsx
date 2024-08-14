@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google"
+
 import { cn } from "@/lib/utils"
+import InformationMarquee from "@/components/information-marquee";
 
 import "./globals.css";
 
@@ -24,11 +26,13 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen flex flex-col justify-between bg-background font-sans antialiased overflow-x-hidden",
           inter.variable
         )}
       >
+        <InformationMarquee />
         {children}
+        <InformationMarquee />
       </body>
     </html>
   )
